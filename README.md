@@ -1,16 +1,12 @@
-# apple_music_jl
+# Flutter app
 
-A new Flutter project.
+My first flutter project
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+This project is my first foray into flutter.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+It is a part of an 3 week interview assignment to develop a simple apple music clone with 3 tabs:
+1) Music
+2) Radio
+3) Search function which queries the itunes API for searching music.
