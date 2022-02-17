@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import './pages/Music.dart';
+import './pages/RadioMusic.dart';
+import './pages/Search.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,9 +14,9 @@ class _MyAppState extends State<MyApp> {
   int currentIndexVar = 0;
 
   final screens = [
-    Center(child: Text('Music', style: TextStyle(fontSize: 60))),
-    Center(child: Text('Radio', style: TextStyle(fontSize: 60))),
-    Center(child: Text('Search', style: TextStyle(fontSize: 60))),
+    Music(),
+    RadioMusic(),
+    Search(),
   ];
 
   // This widget is the root of your application.
@@ -22,8 +25,21 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Music Player'),
-          backgroundColor: Colors.red[300],
+          title: const Text(
+            'Music Player',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.red,
+              // shadows: [
+              //   Shadow(
+              //     offset: Offset(2.0, 2.0),
+              //     blurRadius: 20.0,
+              //     color: Colors.red,
+              //   ),
+              // ],
+            ),
+          ),
+          backgroundColor: Colors.white,
         ),
         body: screens[currentIndexVar],
         bottomNavigationBar: BottomNavigationBar(
