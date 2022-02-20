@@ -57,10 +57,11 @@ class _SearchState extends State<Search> {
                   }),
               suffixIcon: GestureDetector(
                 child: Icon(Icons.search, color: Colors.black26),
-                onTap: () {
+                onTap: () async {
                   // var _search = _queryValue.text;
                   // print('Query ${_search}');
-                  getQuery();
+                  await getQuery();
+                  setState(() {});
                 },
               ),
               hintText: "Search song here...",
