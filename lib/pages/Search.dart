@@ -16,7 +16,7 @@ List listdata = [];
 Future getQuery(String _search) async {
   try {
     final response = await http.get(
-      Uri.parse('https://itunes.apple.com/search?term=$_search&limit=10'),
+      Uri.parse('https://itunes.apple.com/search?term=$_search&limit=15'),
     );
     if (response.statusCode == 200) {
       data = jsonDecode(response.body);
