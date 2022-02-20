@@ -9,14 +9,14 @@ class Search extends StatefulWidget {
   State<Search> createState() => _SearchState();
 }
 
+String query = '';
 Map? data;
 List listdata = [];
 
-Future getQuery() async {
+Future getQuery(String _search) async {
   try {
     final response = await http.get(
-      Uri.parse(
-          'https://itunes.apple.com/search?term=jack+johnson&limit=10&entity=album'),
+      Uri.parse('https://itunes.apple.com/search?term=$_search&limit=10'),
     );
     if (response.statusCode == 200) {
       data = jsonDecode(response.body);
@@ -58,13 +58,14 @@ class _SearchState extends State<Search> {
               suffixIcon: GestureDetector(
                 child: Icon(Icons.search, color: Colors.black26),
                 onTap: () async {
-                  // var _search = _queryValue.text;
+                  var _search = _queryValue.text;
                   // print('Query ${_search}');
-                  await getQuery();
+                  await getQuery(_search);
+                  _queryValue.clear();
                   setState(() {});
                 },
               ),
-              hintText: "Search song here...",
+              hintText: "Search here...",
               border: InputBorder.none,
             ),
           ),
