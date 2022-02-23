@@ -35,8 +35,9 @@ class _RadioMusicState extends State<RadioMusic> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Title
           const Padding(
-            padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+            padding: EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 3.0),
             child: Text(
               'Radio',
               textAlign: TextAlign.start,
@@ -48,13 +49,16 @@ class _RadioMusicState extends State<RadioMusic> {
           ),
           const Padding(
             padding: EdgeInsets.all(0.0),
-            child: Divider(height: 30.0),
           ),
+
+          // List of Radio Stations
           ListView.builder(
             shrinkWrap: true,
             itemCount: radioList.length,
             itemBuilder: (context, index) {
               return Card(
+                margin: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
+                color: Colors.grey[100],
                 child: ListTile(
                   leading: Image.asset(radioList[index].image, width: 45.0),
                   title: Text(radioList[index].name),

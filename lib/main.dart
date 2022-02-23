@@ -30,19 +30,14 @@ class _MyAppState extends State<MyApp> {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.red,
-              // shadows: [
-              //   Shadow(
-              //     offset: Offset(2.0, 2.0),
-              //     blurRadius: 20.0,
-              //     color: Colors.red,
-              //   ),
-              // ],
             ),
           ),
           backgroundColor: Colors.white,
         ),
+        // Accessing the difference screens depending on which one is selected
         body: screens[currentIndexVar],
         bottomNavigationBar: BottomNavigationBar(
+          // currentIndex shows which screen is currently being shown
           currentIndex: currentIndexVar,
           onTap: (index) => setState(() => currentIndexVar = index),
           items: const [
@@ -60,60 +55,6 @@ class _MyAppState extends State<MyApp> {
             ),
           ],
         ),
-
-        // bottomNavigationBar: BottomAppBar(
-        //   // color: Colors.red[200],
-        //   child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-        //     children: [
-        //       Container(
-        //         padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
-        //         child: TextButton(
-        //           onPressed: () => {},
-        //           style: TextButton.styleFrom(
-        //               primary: Color.fromRGBO(99, 99, 102, 1.0)),
-        //           child: Column(
-        //             mainAxisSize: MainAxisSize.min,
-        //             children: [
-        //               Icon(Icons.library_music_outlined),
-        //               Text('Music'),
-        //             ],
-        //           ),
-        //         ),
-        //       ),
-        //       Container(
-        //         padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
-        //         child: TextButton(
-        //           onPressed: () => {},
-        //           style: TextButton.styleFrom(
-        //               primary: Color.fromRGBO(99, 99, 102, 1.0)),
-        //           child: Column(
-        //             mainAxisSize: MainAxisSize.min,
-        //             children: [
-        //               Icon(Icons.radio),
-        //               Text('Radio'),
-        //             ],
-        //           ),
-        //         ),
-        //       ),
-        //       Container(
-        //         padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
-        //         child: TextButton(
-        //           onPressed: () => {},
-        //           style: TextButton.styleFrom(
-        //               primary: Color.fromRGBO(99, 99, 102, 1.0)),
-        //           child: Column(
-        //             mainAxisSize: MainAxisSize.min,
-        //             children: [
-        //               Icon(Icons.search),
-        //               Text('Search'),
-        //             ],
-        //           ),
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-        // ),
       ),
     );
   }
